@@ -37,7 +37,7 @@ app.py
 Dockerfile
 requirements.txt
 item_encoder.pkl
-templates/
+templates/index.html
 README.md
 
 ## Note on Model Files
