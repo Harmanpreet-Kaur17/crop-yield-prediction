@@ -1,10 +1,9 @@
-# crop-yield-prediction
-Crop Yield Prediction using Machine Learning and Flask
-# Crop Yield Prediction
+# Crop Yield Prediction using Machine Learning
 
-This project predicts agricultural crop yield (hg/ha) using machine learning techniques based on historical and environmental factors.
+This project predicts agricultural crop yield (hg/ha) using a machine learning model based on historical and environmental data.  
+The application is deployed as a web app using Flask and Docker.
 
-## Features Used
+## Input Features
 - Crop type
 - Year
 - Average rainfall (mm/year)
@@ -12,8 +11,13 @@ This project predicts agricultural crop yield (hg/ha) using machine learning tec
 - Average temperature (°C)
 
 ## Machine Learning Model
-- Linear Regression
-- Label Encoding for categorical crop names
+- Algorithm: Random Forest Regressor
+- Type: Regression
+- Reason: Handles non-linear relationships and feature interactions effectively
+
+## Model Performance
+- Mean Absolute Error (MAE): ~4562 hg/ha
+- R² Score: ~0.98
 
 ## Tech Stack
 - Python
@@ -23,21 +27,22 @@ This project predicts agricultural crop yield (hg/ha) using machine learning tec
 - NumPy
 - Docker
 
-## Model Performance
-- MAE: ~4562 hg/ha
-- R² Score: ~0.98
-
 ## Deployment
-The project is deployed on Hugging Face Spaces using Docker.
+The project is deployed on Hugging Face Spaces.
 
-🔗 Deployment Link: https://huggingface.co/spaces/HarmanpreetKaur06/crop-yield-prediction
+🔗 **Live App:** https://huggingface.co/spaces/HarmanpreetKaur06/crop-yield-prediction
 
-## GitHub Repository
-🔗 https://github.com/Harmanpreet-Kaur17/crop-yield-prediction
+## Repository Structure
+app.py
+Dockerfile
+requirements.txt
+item_encoder.pkl
+templates/
+README.md
 
 ## Note on Model Files
-The trained model file (`model.pkl`) is not included in this repository due to GitHub file size limitations.
-The complete working project including the trained model is deployed on Hugging Face.
+The trained model file (`model.pkl`) is not included in this repository due to GitHub file size limitations.  
+The complete working project including the trained model is available in the deployed Hugging Face Space.
 
 ## Author
 Harmanpreet Kaur
