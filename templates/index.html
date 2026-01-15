@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Yield Prediction</title>
+</head>
+<body>
+    <h2>Crop Yield Prediction</h2>
+
+    <form method="POST" action="/predict">
+        Crop Name:
+      <select name="crop" required>
+    <option value="Cassava">Cassava</option>
+    <option value="Maize">Maize</option>
+    <option value="Plantains and others">Plantains and others</option>
+    <option value="Potatoes">Potatoes</option>
+    <option value="Rice, paddy">Rice</option>
+    <option value="Sorghum">Sorghum</option>
+    <option value="Soybeans">Soybeans</option>
+    <option value="Sweet potatoes">Sweet potatoes</option>
+    <option value="Wheat">Wheat</option>
+    <option value="Yams">Yams</option>
+</select>
+
+        Year:
+        <input type="number" name="year" required><br><br>
+
+        Rainfall (mm/year):
+        <input type="number" step="any" name="rainfall" required><br><br>
+
+        Pesticides (tonnes):
+        <input type="number" step="any" name="pesticides" required><br><br>
+
+        Average Temperature (°C):
+        <input type="number" step="any" name="temperature" required><br><br>
+
+        <button type="submit">Predict Yield</button>
+    </form>
+    {% if error %}
+    <p style="color:red;"><b>{{ error }}</b></p>
+    {% endif %}
+
+    {% if prediction_hg %}
+    <h3>Predicted Crop Yield</h3>
+    <p><b>{{ prediction_hg }} hg/ha</b></p>
+    <p>≈ <b>{{ prediction_tonnes }} tonnes per hectare</b></p>
+{% endif %}
+
+</body>
+</html>
